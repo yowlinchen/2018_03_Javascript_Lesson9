@@ -7,8 +7,21 @@
             // let s = "Hello" + new String("World");
             // alert(s);
             let input=document.getElementById("text").value;
+            // if(input.indexOf("http://")!=0) {
+            //         alert("Website needs to start with http://");
+            //         return;
+            // }
+            if(input.toLowerCase().indexOf("fuck")!=-1) {
+                alert("don't say bad word");
+                return;
+            }
+            alert("OK, Do something important");
             console.log("String Len:",input.length);
-
+            console.log("Second character",input.charAt(1));
+            console.log("Change to Uppser Case",input.toUpperCase());
+            console.log("get ell",input.substring(1,4));
+            console.log("Search abc is in the string",input.indexOf("abc"));
+            console.log("Search lo is in the string",input.indexOf("lo"));
         }
     </script>
 </head>
