@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Timer</title>
+    <script>
+        let timer;
+        function init() {
+            timer = document.getElementById("timer")
+            // Every second run this program
+            // First argumetn of setTimeout is function name 
+            // second argument of setTimeout is time, 1000*1/1000 = 1 sec 
+            window.setTimeout(countdown,1000);
+            console.log(1);
+        }
+        function countdown() {
+            console.log(2);
+        }
+        window.addEventListener("load",init);
+    </script>
+</head>
+<body>
+    <!-- will count down from 3,2,1,0 -->
+    <span id="timer">3</span>
+</body>
+</html>
