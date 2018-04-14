@@ -23,17 +23,17 @@
                 alert("性別");
             } else {
                 let option=gender.options[gender.selectedIndex];
-                alert(option.value);
+                // alert(option.value);
+                window.open(option.value); 
             } 
-
         }
     </script>
 </head>
 <body>
     <select id="gender">
-        <option>性別</option>
-        <option value="male">男</option>
-        <option value="female">女</option>
+        <option>網站</option>
+        <option value="https://www.google.com/">Google</option>
+        <option value="https://www.facebook.com/">Facebook</option>
     </select>
     <button onclick="check();">Check</button>
 </body>
