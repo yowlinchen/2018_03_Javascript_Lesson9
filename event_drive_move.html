@@ -5,26 +5,36 @@
     <script>
         // When HTML DOM is redy / call init() 
         let box;
-        function init() {
+        function init() { // right after loading
             box=document.getElementById("box");
-            box.addEventListener("click",pickup);
+            box.addEventListener("mousedown",pickup);
         }
-        function pickup() { // can be put here w/o any problem.  Before it was before init()
+
+        // after click, pick() is run
+        // Register mouse event
+        // IFIFIF click again, remove pickup run putdown
+
+        let differX, differY;
+        function pickup(e) { // can be put here w/o any problem.  Before it was before init()
+            differX = e.clientX - box.offsetLeft;
+            differY = e.clientY - box.offsetTop;
             // let box move with mouse
             document.addEventListener("mousemove",move);
             // Change the event handler.  if you click 1 more time, execute put down
-            box.removeEventListener("click",pickup); 
-            box.addEventListener("click",putdown);
+            box.removeEventListener("mousedown",pickup); 
+            box.addEventListener("mouseup",putdown);
         }
         function move(e) {
             // document.title=e.clientX+","+e.clientY;
-            box.style.left=(e.clientX-20)+"px";
-            box.style.top=(e.clientY-20)+"px";
+            box.style.left=(e.clientX-differX)+"px";
+            box.style.top=(e.clientY-differY)+"px";
         }
+
+        // After second click, run putdown()
         function putdown() { 
             document.removeEventListener("mousemove",move);
-            box.addEventListener("click",pickup);
-            box.removeEventListener("click",putdown); 
+            box.addEventListener("mousedown",pickup);
+            box.removeEventListener("mouseup",putdown); 
         }
         window.addEventListener("load",init); // same thing as put in the body tag like before
     </script>
