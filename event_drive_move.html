@@ -8,6 +8,7 @@
         function init() { // right after loading
             box=document.getElementById("box");
             box.addEventListener("mousedown",pickup);
+            box.addEventListener("mouseup",putdown);
         }
 
         // after click, pick() is run
@@ -21,8 +22,6 @@
             // let box move with mouse
             document.addEventListener("mousemove",move);
             // Change the event handler.  if you click 1 more time, execute put down
-            box.removeEventListener("mousedown",pickup); 
-            box.addEventListener("mouseup",putdown);
         }
         function move(e) {
             // document.title=e.clientX+","+e.clientY;
@@ -33,8 +32,6 @@
         // After second click, run putdown()
         function putdown() { 
             document.removeEventListener("mousemove",move);
-            box.addEventListener("mousedown",pickup);
-            box.removeEventListener("mouseup",putdown); 
         }
         window.addEventListener("load",init); // same thing as put in the body tag like before
     </script>
