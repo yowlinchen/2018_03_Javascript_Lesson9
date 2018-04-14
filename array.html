@@ -4,23 +4,30 @@
     <title>Array</title>
     <script>
         function check() {
-            let a = new Array(3);
-            a[0] = 60;
-            a[1] = 40;
-            a[2] = 70;
-            a[3] = 10; // over the limit, will auto-extend
-            console.log(a);
-            // for loop to operate on array object
-            let sum=0;
-            for(let i=0;i<a.length;i++) {
-                // console.log(a[i]);
-                sum=sum+a[i];
-            }
-            alert(sum/a.length);
+            // let a = new Array(3);
+            // a[0] = 60;
+            // a[1] = 40;
+            // a[2] = 70;
+            // a[3] = 10; // over the limit, will auto-extend
+            // console.log(a);
+            // // for loop to operate on array object
+            // let sum=0;
+            // for(let i=0;i<a.length;i++) {
+            //     // console.log(a[i]);
+            //     sum=sum+a[i];
+            // }
+            // alert(sum/a.length);
+            let gender=document.getElementById("gender");
+            console.log(gender.selectedIndex);
         }
     </script>
 </head>
 <body>
+    <select id="gender">
+        <option>性別</option>
+        <option value="male">男</option>
+        <option value="female">女</option>
+    </select>
     <button onclick="check();">Check</button>
 </body>
 </html
