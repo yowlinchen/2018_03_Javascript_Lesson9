@@ -14,6 +14,7 @@
         }
         function countdown() {
             timer.innerHTML=timer.innerHTML-1;
+            window.setTimeout(countdown,1000);
         }
         window.addEventListener("load",init);
     </script>
