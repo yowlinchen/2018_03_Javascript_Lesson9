@@ -8,7 +8,15 @@
             a[0] = 60;
             a[1] = 40;
             a[2] = 70;
+            a[3] = 10; // over the limit, will auto-extend
             console.log(a);
+            // for loop to operate on array object
+            let sum=0;
+            for(let i=0;i<a.length;i++) {
+                // console.log(a[i]);
+                sum=sum+a[i];
+            }
+            alert(sum/a.length);
         }
     </script>
 </head>
