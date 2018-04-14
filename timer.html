@@ -4,17 +4,17 @@
     <title>Timer</title>
     <script>
         let timer;
+        let intervalId;
         function init() {
             timer = document.getElementById("timer")
             // every 1 second, all countdown once, more fit to our need
-            window.setInterval(countdown,1000);
+            intervalId = window.setInterval(countdown,1000);
         }
         function countdown() {
             timer.innerHTML=timer.innerHTML-1;
             if(timer.innerHTML>0) {
-                // window.setTimeout(countdown,1000);
             } else {
-                // window.location="https://www.google.com";
+                window.clearInterval(intervalId); // Delete the scheduler number (Given by browser)
                 alert("Happy Birthday");
             }
         }
