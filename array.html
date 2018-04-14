@@ -18,7 +18,14 @@
             // }
             // alert(sum/a.length);
             let gender=document.getElementById("gender");
-            console.log(gender.selectedIndex);
+            // console.log(gender.selectedIndex);
+            if (gender.selectedIndex==0) {
+                alert("性別");
+            } else {
+                let option=gender.options[gender.selectedIndex];
+                alert(option.value);
+            } 
+
         }
     </script>
 </head>
