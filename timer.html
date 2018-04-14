@@ -6,16 +6,13 @@
         let timer;
         function init() {
             timer = document.getElementById("timer")
-            // Every second run this program
-            // First argumetn of setTimeout is function name 
-            // second argument of setTimeout is time, 1000*1/1000 = 1 sec 
-            window.setTimeout(countdown,1000);
-            console.log(1);
+            // every 1 second, all countdown once, more fit to our need
+            window.setInterval(countdown,1000);
         }
         function countdown() {
             timer.innerHTML=timer.innerHTML-1;
             if(timer.innerHTML>0) {
-                window.setTimeout(countdown,1000);
+                // window.setTimeout(countdown,1000);
             } else {
                 window.location="https://www.google.com";
             }
